@@ -22,7 +22,7 @@ def check_password_strength(password):
         (r".{8,}", "At least 8 characters")
     ]
     
-    passed_criteria = [desc for pattern, desc in criteria if re.search(pattern, password)]            # the goal  of this line is to check how strong a password is by matching it with criteria 
+    passed_criteria = [check for pattern, check in criteria if re.search(pattern, password)]            # the goal  of this line is to check how strong a password is by matching it with criteria 
     strength = len(passed_criteria)
     
     return strength, passed_criteria
